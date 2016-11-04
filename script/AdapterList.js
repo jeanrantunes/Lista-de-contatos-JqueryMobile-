@@ -4,11 +4,12 @@ var AdapterList = function(list_contacts){
 	this.renderList = function(){
 		var $li = $('#lista-contatos');
 		var self = this;
+		
 		$.each(this.list_contacts, function(index){
 			$li.append("<li data-index="+index+">\
-							<img class='image-contact' src="+"../Contacts/"+this.getPathImage()+">\
+							<img class='image-contact' src='../Contacts/"+this.getPathImage()+"'>\
 							<span class='name-contact'>"+this.getName()+"</span>\
-						</li>");
+						</li>");			
 		});
 		$('#lista-contatos').children('li').on('click', function(){
 			var i = parseInt($(this).attr('data-index')); 
