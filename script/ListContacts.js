@@ -1,7 +1,10 @@
 var ListContacts = function(srcList) {
     this.srcList = srcList;
-
-    this.getListContacts = function(){
+    function callback(result) {
+        console.log(result);
+        return result;    
+    }
+    this.getListContacts = function(callback){
         var self = this;
         var list = [];
         $.getJSON(self.srcList, function(data){
@@ -9,9 +12,11 @@ var ListContacts = function(srcList) {
                 list.push(this);
             });
         }).done(function(){
-            self.setAttrsContact(list);
+            callback(list);
+            //self.setAttrsContact(list);
         }).fail(function(){
-            alert("Not found!");
+            return null;
+            //alert("Not found!");
         });
 
     };

@@ -7,7 +7,7 @@ var AdapterList = function(list_contacts){
 		
 		$.each(this.list_contacts, function(index){
 			$li.append("<li data-index="+index+">\
-							<img class='image-contact' src='../Contacts/"+this.getPathImage()+"'>\
+							<img class='image-contact' src='Contacts/"+this.getPathImage()+"'>\
 							<span class='name-contact'>"+this.getName()+"</span>\
 						</li>");			
 		});
