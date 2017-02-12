@@ -1,13 +1,10 @@
 var ListContacts = function(srcList) {
-    this.srcList = srcList;
-    function callback(result) {
-        console.log(result);
-        return result;    
-    }
+    var srcList = srcList;
+
     this.getListContacts = function(callback){
         var self = this;
         var list = [];
-        $.getJSON(self.srcList, function(data){
+        $.getJSON(srcList, function(data){
             $.each(data, function(){
                 list.push(this);
             });
